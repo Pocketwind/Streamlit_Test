@@ -28,10 +28,4 @@ ax.set_title('sin and cos fuction')
 
 st.pyplot(fig)
 
-@st.cache
-def expensive_computataion(x):
-    return np.sin(x) + np.cos(x)
 
-
-
-result = expensive_computataion(x)
