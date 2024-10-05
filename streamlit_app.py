@@ -11,5 +11,5 @@ st.plotly_chart(fig1)
 
 data_german=px.data.gapminder().query("country=='German'")
 data_italy=px.data.gapminder().query("country=='Italy'")
-fig2=px.line(data,x="year",y="pop",color="country")
+fig2=px.line(pd.concat(data_german,data_italy),x="year",y="pop",color="country")
 st.plotly_chart(fig2)
