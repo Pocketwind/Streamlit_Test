@@ -3,6 +3,6 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 
-data=px.data.gapminder()
+data=px.data.gapminder().query("year==2007")
 st.dataframe(data)
-st.bar_chart(data)
+fig=px.treemap(data,path=[px.Constant("World"),"continent","country"],values="pop",color="lifeExp")
