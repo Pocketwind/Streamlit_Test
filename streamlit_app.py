@@ -3,13 +3,9 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 
-data=px.data.gapminder().query("year==2007")
+data=px.data.gapminder()
 st.dataframe(data)
 
-fig1=px.treemap(data,path=[px.Constant("World"),"continent","country"],values="pop",color="lifeExp")
+data1=px.data.tips()
+fig1=px.treemap(data1,path=[px.Constant("All"),"day","time","sex"],values="tip")
 st.plotly_chart(fig1)
-
-data_german=px.data.gapminder().query("country=='German'")
-data_italy=px.data.gapminder().query("country=='Italy'")
-fig2=px.line(pd.concat([data_german,data_italy]),x="year",y="pop",color="country")
-st.plotly_chart(fig2)
