@@ -4,4 +4,4 @@ import numpy as np
 import plotly.express as px
 
 data=px.data.gapminder()
-st.line_chart(data)
+st.dataframe(data)
