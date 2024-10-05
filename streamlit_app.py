@@ -5,5 +5,10 @@ import plotly.express as px
 
 data=px.data.gapminder().query("year==2007")
 st.dataframe(data)
-fig=px.treemap(data,path=[px.Constant("World"),"continent","country"],values="pop",color="lifeExp")
-st.plotly_chart(fig)
+
+fig1=px.treemap(data,path=[px.Constant("World"),"continent","country"],values="pop",color="lifeExp")
+st.plotly_chart(fig1)
+
+data=px.data.gapminder()
+fig2=px.line(data,x="year",y="pop",color="country")
+st.plotly_chart(fig2)
