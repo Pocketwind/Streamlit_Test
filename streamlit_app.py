@@ -9,6 +9,7 @@ st.dataframe(data)
 fig1=px.treemap(data,path=[px.Constant("World"),"continent","country"],values="pop",color="lifeExp")
 st.plotly_chart(fig1)
 
-data=px.data.gapminder().quary("iso_alpha=='JPN' and iso_alpha=='KOR'")
+data_german=px.data.gapminder().quary("country=='German'")
+data_italy=px.data.gapminder().quary("country=='Italy'")
 fig2=px.line(data,x="year",y="pop",color="country")
 st.plotly_chart(fig2)
